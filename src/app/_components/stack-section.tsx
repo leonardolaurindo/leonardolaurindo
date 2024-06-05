@@ -91,7 +91,7 @@ export default function StackSection() {
                 </div>
             </div>
 
-            <div className="mx-auto text-center md:max-w-[58rem]">
+            {/* <div className="mx-auto text-center md:max-w-[58rem]">
                 <p className="max-w-[95%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
                     Especializado nas principais tecnologias e frameworks para desenvolvimento web moderno e eficiente.
                 </p>
@@ -128,7 +128,7 @@ export default function StackSection() {
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
-            </div>
+            </div> */}
         </section>
     )
 }
