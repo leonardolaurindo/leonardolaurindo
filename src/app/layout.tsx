@@ -2,7 +2,12 @@ import type { Metadata } from 'next'
 import { Inter as FontSants } from 'next/font/google'
 import localFont from 'next/font/local';
 import { cn } from '@/lib/utils';
+<<<<<<< HEAD
 import { GoogleAnalytics } from '@next/third-parties/google'
+=======
+import { ModeToggle } from './_components/mode-toggle';
+
+>>>>>>> 25720b14ec3e923a1c98c1faf3317fa1319087f8
 
 import { ThemeProvider } from './_components/theme-provider'
 
@@ -14,7 +19,7 @@ const fontSants = FontSants({
 })
 
 const fontHeading = localFont({
-  src: '../assets/fonts/CalSans-SemiBold.woff2',
+  src: '../assets/fonts/Lato-Bold.ttf',
   variable: '--font-heading'
 })
 
@@ -38,7 +43,8 @@ export default function RootLayout({
         fontSants.variable,
         fontHeading.variable
       )} >
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
+          <ModeToggle />
           {children}
         </ThemeProvider>
       </body>
