@@ -7,25 +7,34 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import { ImageDialog } from "@/components/image-dialog";
 
 const Hero = () => {
     return (
         <>
             <section id='about' className="container flex flex-col md:max-w-[64rem] md:py-12 lg:py-24">
-                <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-12">
-                    <div className="lg:col-span-1 lg:pl-10 flex justify-center">
+                <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12 lg:grid-rows-[auto-1f]">
+                    <div className="lg:pl-20 flex justify-center">
                         <div className="max-w-xs lg:max-w-none">
                             <div className="lg:ml-auto lg:text-right">
                                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
                                     <Carousel>
                                         <CarouselContent>
-                                            <CarouselItem>Ummmmmmm</CarouselItem>
-                                            <CarouselItem><img
-                                                src="/portfolio/patri/dashboard.jpg"
-                                                alt="hero"
-                                                className="max-w-full lg:ml-auto"
-                                            /></CarouselItem>
-                                            <CarouselItem>.asdasdasd</CarouselItem>
+                                            <CarouselItem>
+                                                <ImageDialog imgSrc="/portfolio/patri/dashboard.jpg" alt="hero" />
+                                            </CarouselItem>
+                                            <CarouselItem>
+                                                <ImageDialog imgSrc="/portfolio/patri/dark.jpg" alt="hero" />
+                                            </CarouselItem>
+                                            <CarouselItem>
+                                                <ImageDialog imgSrc="/portfolio/patri/workers.jpg" alt="hero" />
+                                            </CarouselItem>
+                                            <CarouselItem>
+                                                <ImageDialog imgSrc="/portfolio/patri/itens.jpg" alt="hero" />
+                                            </CarouselItem>
+                                            <CarouselItem>
+                                                <ImageDialog imgSrc="/portfolio/patri/multi_companies.jpg" alt="hero" />
+                                            </CarouselItem>
                                         </CarouselContent>
                                         <CarouselPrevious />
                                         <CarouselNext />
@@ -71,7 +80,8 @@ const Hero = () => {
 
                         </div>
                     </div>
-                    <div className="lg:col-span-1 lg:order-first lg:row-span-1 text-center md:text-start">
+                    <div className="lg:order-first lg:row-span-2 text-center md:text-start">
+
                         <div className="hero-content">
                             <h1 className="mb-6 text-4xl font-bold leading-tight text-slate-800 dark:text-white sm:text-5xl lg:text-6xl">
                                 Patrimonio
@@ -81,18 +91,14 @@ const Hero = () => {
                             </p>
                             <ul className="flex flex-wrap items-center">
                                 <li>
-                                    <a
-                                        href="/#"
-                                        className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-600 lg:px-8"
-                                    >
+                                    <a href="/#"
+                                        className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-600 lg:px-8">
                                         Get Started
                                     </a>
                                 </li>
                                 <li>
-                                    <a
-                                        href="/#"
-                                        className="inline-flex items-center justify-center px-6 py-3 text-center text-base font-medium text-slate-700 hover:text-primary dark:text-white"
-                                    >
+                                    <a href="/#"
+                                        className="inline-flex items-center justify-center px-6 py-3 text-center text-base font-medium text-slate-700 hover:text-primary dark:text-white">
                                         <span className="mr-2">
                                             <svg
                                                 width="24"
