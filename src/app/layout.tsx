@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter as FontSants } from 'next/font/google'
 import localFont from 'next/font/local';
 import { cn } from '@/lib/utils';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { ThemeProvider } from './_components/theme-provider'
 
@@ -41,6 +42,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-FZRWC8LM21" />
     </html>
   )
 }
