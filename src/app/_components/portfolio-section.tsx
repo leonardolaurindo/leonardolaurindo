@@ -24,5 +24,6 @@ export default function PortfolioSection() {
                 </div>
             </div>
         </section>
+
     )
 }
