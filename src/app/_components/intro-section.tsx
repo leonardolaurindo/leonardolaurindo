@@ -1,21 +1,20 @@
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
+import Image from "next/image";
 
 export default function IntroSection() {
     return (
         <section id='intro' className='space-y-6 py-8 md:py-12 lg:py-32 relative'>
-            {/* SVG - BG */}
-            <svg viewBox="0 0 1024 1024" className="absolute left-1/3 top-full md:left-1/2 md:top-1/4 -z-10 h-[16rem] w-[16em] md:h-[54rem] md:w-[54em] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
-                <circle cx="512" cy="512" r="800" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fillOpacity="0.7" />
-                <defs>
-                    <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                        <stop stopColor="#7775d6a6" />
-                        <stop offset="1" stopColor="#e935c255" />
-                    </radialGradient>
-                </defs>
-            </svg>
-            {/* FIM - SVG - BG */}
+            <div className="absolute inset-0 -z-10">
+                <Image
+                    src="/background.webp"
+                    alt="Background"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                />
+            </div>
             <div className="container flex max-w-[64rem] flex-col items-center text-center gap-4">
                 <span className='rounded-2xl border border-muted-foreground/45 px-4 py-1.5 text-sm font-medium flex items-center'>
                     Transforme ideias em realidade com soluções web inovadoras 🚀

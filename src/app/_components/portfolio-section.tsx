@@ -13,6 +13,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
+import Image from "next/image";
 import { ImageDialog } from "@/components/image-dialog";
 
 export const PortfolioSection = () => {
