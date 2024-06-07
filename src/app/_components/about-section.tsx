@@ -27,7 +27,10 @@ export default function AboutSection() {
                     </div>
                 </div>
                 <div className="lg:order-first lg:row-span-2 text-center md:text-start">
-                    <h1 className="font-heading tex-3xl md:text-4xl lg:text-5xl">@leonardolaurindo</h1>
+                    <div className="flex flex-row">
+                        <h1 className="font-heading tex-3xl md:text-4xl lg:text-5xl">@leonardolaurindo</h1>
+                        <Image src="/waving-hand.gif" alt="Hello" width={60} height={60} className="ml-2" unoptimized />
+                    </div>
                     <p className="mt-5 text-base text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam saepe dignissimos a laboriosam, omnis ad tenetur minus commodi. Quisquam, provident. Provident voluptatum nulla cum. Ea mollitia asperiores soluta accusamus aspernatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus distinctio error qui ad illum reiciendis esse aperiam, eaque adipisci omnis deserunt facere, molestias nesciunt perspiciatis possimus. Impedit commodi velit vero!</p>
                     <div className="mt-6 flex justify-center lg:justify-start gap-6">
                         <SocialLink href="#" icon={InstagramIcon} />
