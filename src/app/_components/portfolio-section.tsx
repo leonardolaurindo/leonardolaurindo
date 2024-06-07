@@ -19,7 +19,18 @@ import { ImageDialog } from "@/components/image-dialog";
 export const PortfolioSection = () => {
     return (
         <>
-            <section id='about' className="container flex flex-col md:max-w-[64rem] md:py-12 lg:py-24">
+            <section
+                id='about'
+                className="container flex flex-col md:max-w-[64rem] md:py-12 lg:py-24 relative"
+            >
+                <Image
+                    src="/background_2.webp"
+                    alt="Background"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                    className="absolute inset-0 -z-10"
+                />
                 <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
                     <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
                         Projetos em Destaque
