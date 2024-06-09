@@ -14,30 +14,30 @@ import {
 import { ImageDialog } from "@/components/image-dialog"
 import Image from "next/image"
 
-export const PatriItem = () => {
+export const InterSuiteItem = () => {
     return (
         <>
             <div className="pt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12 lg:grid-rows-[auto-1f]">
-                <div className="lg:pl-20 flex justify-center">
+                <div className="lg:order-first lg:pr-20 flex justify-center">
                     <div className="max-w-xs lg:max-w-none">
                         <div className="lg:ml-auto lg:text-right">
                             <div className="relative z-10 inline-block pt-11 lg:pt-0">
                                 <Carousel>
                                     <CarouselContent>
                                         <CarouselItem>
-                                            <ImageDialog imgSrc="/portfolio/patri/dashboard.jpg" alt="hero" />
+                                            <ImageDialog imgSrc="/portfolio/intersuite/header.webp" alt="hero" />
                                         </CarouselItem>
                                         <CarouselItem>
-                                            <ImageDialog imgSrc="/portfolio/patri/dark.jpg" alt="hero" />
+                                            <ImageDialog imgSrc="/portfolio/intersuite/canais_section.webp" alt="hero" />
                                         </CarouselItem>
                                         <CarouselItem>
-                                            <ImageDialog imgSrc="/portfolio/patri/workers.jpg" alt="hero" />
+                                            <ImageDialog imgSrc="/portfolio/intersuite/contact_section.webp" alt="hero" />
                                         </CarouselItem>
                                         <CarouselItem>
-                                            <ImageDialog imgSrc="/portfolio/patri/itens.jpg" alt="hero" />
+                                            <ImageDialog imgSrc="/portfolio/intersuite/other_page.webp" alt="hero" />
                                         </CarouselItem>
                                         <CarouselItem>
-                                            <ImageDialog imgSrc="/portfolio/patri/multi_companies.jpg" alt="hero" />
+                                            <ImageDialog imgSrc="/portfolio/intersuite/reunion_page.webp" alt="hero" />
                                         </CarouselItem>
                                     </CarouselContent>
                                     <CarouselPrevious />
@@ -96,10 +96,10 @@ export const PatriItem = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:order-first lg:row-span-2 text-center md:text-start">
+                <div className=" lg:row-span-2 text-center md:text-start">
                     <div className="hero-content">
                         <h1 className="mb-6 text-4xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
-                            Sistema de Patrimonio
+                            Landing Page InterSuite
                         </h1>
                         <p className="mb-8 max-w-[480px] text-base text-slate-600 dark:text-slate-400 sm:text-justify">
                             Solução moderna de gestão de patrimônio que simplifica o controle de ativos empresariais. Com recursos avançados e interface intuitiva, a plataforma oferece praticidade e confiabilidade na administração patrimonial.

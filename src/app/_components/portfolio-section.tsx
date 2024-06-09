@@ -16,6 +16,7 @@ import {
 import Image from "next/image";
 import { ImageDialog } from "@/components/image-dialog";
 import { PatriItem } from "./port/patri";
+import { InterSuiteItem } from "./port/intersuite";
 
 export const PortfolioSection = () => {
     return (
@@ -34,6 +35,12 @@ export const PortfolioSection = () => {
                 </div>
                 <div>
                     <PatriItem />
+
+                    <div className="inline-flex items-center justify-center w-full">
+                        <hr className="w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+                    </div>
+
+                    <InterSuiteItem />
                 </div>
             </div>
         </section>
