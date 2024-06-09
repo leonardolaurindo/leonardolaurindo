@@ -25,6 +25,7 @@ export const ImageDialog = ({ imgSrc, alt }: any) => (
                 height={1080}
                 sizes="(max-width: 640px) 90vw, (max-width: 1024px) 75vw, 850px"
                 className="w-full h-auto"
+                loading="lazy"
             />
         </DialogContent>
     </Dialog>
