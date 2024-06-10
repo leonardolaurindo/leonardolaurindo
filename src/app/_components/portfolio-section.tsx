@@ -37,7 +37,7 @@ export const PortfolioSection = () => {
                     <PatriItem />
 
                     <div className="inline-flex items-center justify-center w-full">
-                        <hr className="w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+                        <hr className="w-full h-px my-8 bg-violet-600 border-0 dark:bg-violet" />
                     </div>
 
                     <InterSuiteItem />

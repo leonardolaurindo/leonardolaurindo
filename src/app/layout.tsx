@@ -22,10 +22,13 @@ const fontHeading = localFont({
 
 export const metadata: Metadata = {
   title: 'Leonardo Laurindo - Desenvolvedor Full Stack',
-  description: 'Portfolio, Leonardo Laurindo desenvolvedor full stack, JavaScript, PHP, Node.JS, React, Next...',
+  description: 'Desenvolvedor full stack, JavaScript, PHP, Node.JS, React, Next...',
   keywords: [
-    'desenvolvedor full stack', 'JavaScript', 'PHP', 'Node.JS', 'React', 'Next', 'HTML', 'CSS', 'TailwindCSS', 'Leonardo Laurindo', 'Desenvolvedor', 'Full Stack', 'Front End', 'Back End'
-  ]
+    'desenvolvedor full stack', 'JavaScript', 'PHP', 'Node.JS', 'React', 'Next', 'HTML', 'CSS', 'TailwindCSS', 'Leonardo Laurindo', 'Desenvolvedor', 'Full Stack', 'Front End', 'Back End', 'Criador de Site', 'Desenvolvimento de Sistema'
+  ],
+  icons: {
+    icon: '/favicon.png'
+  }
 }
 
 export default function RootLayout({
@@ -34,12 +37,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={cn(
         'min-h-screen bg-background font-sans antialiased',
         fontSants.variable,
         fontHeading.variable
       )} >
+
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           <ModeToggle />
           {children}
