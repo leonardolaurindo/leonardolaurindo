@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter as FontSants } from 'next/font/google'
 import localFont from 'next/font/local';
+import { Inter as FontSants } from 'next/font/google'
 import { cn } from '@/lib/utils';
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { ModeToggle } from './_components/mode-toggle';
@@ -21,14 +21,49 @@ const fontHeading = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Leonardo Laurindo - Desenvolvedor Full Stack',
-  description: 'Desenvolvedor full stack, JavaScript, PHP, Node.JS, React, Next...',
+  metadataBase: new URL('https://leonardolaurindo.com.br'),
+  title: 'Leonardo Laurindo | Desenvolvedor Full Stack | Soluções Web de Alta Performance',
+  description: 'Desenvolvedor Full Stack especializado em criar soluções web de alta performance usando JavaScript, React, Next.js, Node.js e PHP. Transforme suas ideias em realidade com um desenvolvedor experiente e confiável.',
   keywords: [
-    'desenvolvedor full stack', 'JavaScript', 'PHP', 'Node.JS', 'React', 'Next', 'HTML', 'CSS', 'TailwindCSS', 'Leonardo Laurindo', 'Desenvolvedor', 'Full Stack', 'Front End', 'Back End', 'Criador de Site', 'Desenvolvimento de Sistema'
+    'desenvolvedor full stack', 'soluções web de alta performance', 'JavaScript', 'React', 'Next.js', 'Node.js', 'PHP', 'desenvolvimento web', 'criação de sites', 'desenvolvimento de aplicativos web', 'Leonardo Laurindo'
   ],
+  authors: [
+    { name: 'Leonardo Laurindo', url: 'https://leonardolaurindo.com.br' }
+  ],
+  creator: 'Leonardo Laurindo',
+  publisher: 'Leonardo Laurindo',
   icons: {
-    icon: '/favicon.png'
-  }
+    icon: '/favicon.png',
+  },
+  openGraph: {
+    title: 'Leonardo Laurindo | Desenvolvedor Full Stack | Soluções Web de Alta Performance',
+    description: 'Desenvolvedor Full Stack especializado em criar soluções web de alta performance usando JavaScript, React, Next.js, Node.js e PHP. Transforme suas ideias em realidade com um desenvolvedor experiente e confiável.',
+    url: 'https://leonardolaurindo.com.br',
+    siteName: 'Leonardo Laurindo - Desenvolvedor Full Stack',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Leonardo Laurindo - Desenvolvedor Full Stack'
+      }
+    ],
+    locale: 'pt-BR',
+    type: 'website'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    }
+  },
+};
+
+export const viewport = {
+  colorScheme: 'dark',
 }
 
 export default function RootLayout({
