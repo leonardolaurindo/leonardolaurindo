@@ -67,6 +67,10 @@ const config = {
         heading: ['var(--font-heading)', ...fontFamily.sans],
       },
       keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -97,6 +101,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         aurora: "aurora 60s linear infinite",
         "meteor-effect": "meteor 5s linear infinite",
+        fade: 'fadeIn .5s ease-in-out',
       },
     },
   },

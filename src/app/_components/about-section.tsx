@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -20,12 +21,11 @@ export default function AboutSection() {
     return (
 
         <section id='about' className="container flex flex-col md:max-w-[64rem] md:py-12 lg:py-24">
-
             <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12 lg:grid-rows-[auto-1f]">
                 <div className="lg:pl-20 flex justify-center">
                     <div className="max-w-xs px-2.5 lg:max-w-none">
                         <Image src="/avatar.webp" alt="Leonardo Laurindo" width={400} height={400} quality="100" priority={true}
-                            className="aspect-square rotate-3 rounded-lg dark:bg-zinc-800 bg-zinc-100 object-cover mt-8" />
+                            className="animate-fadeaspect-square rotate-3 rounded-lg dark:bg-zinc-800 bg-zinc-100 object-cover mt-8" />
                     </div>
                 </div>
                 <div className="lg:order-first lg:row-span-2 text-justify">
