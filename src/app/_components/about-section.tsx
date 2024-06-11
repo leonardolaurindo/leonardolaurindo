@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -38,12 +37,12 @@ export default function AboutSection() {
                             className="m-2 w-15 h-15 sm:w-10 sm:h-10 item"
                             unoptimized
                         />
-                        <h1 className="flex font-heading text-4xl lg:text-5xl">Oi, sou Leonardo</h1>
+                        <h1 className="flex font-heading text-4xl lg:text-5xl">Oi, sou Leonardo!</h1>
                     </div>
                     <p className="mt-5 text-base text-muted-foreground ">
-                        desenvolvedor Full Stack apaixonado por criar experiências web envolventes. Com um histórico diversificado em projetos desafiadores, atuo no desenvolvimento de aplicações utilizando tecnologias modernas como Next.js, Node.js, TypeScript, Tailwind CSS, PHP e MySQL. <br />
-                        Na InterCert, uma empresa especializada em soluções de Automação Comercial e Certificação Digital, meu foco está em criar interfaces intuitivas e impactantes, aplicando princípios de UI/UX para maximizar a conversão de usuários.
-                        Entusiasta de novas tecnologias, busco constantemente aprimorar minhas habilidades e compartilhar conhecimentos com a comunidade de desenvolvedores.
+                    Desenvolvedor Full Stack apaixonado por criar experiências web envolventes. Com um histórico diversificado em projetos desafiadores, utilizo tecnologias modernas como Next.js, Node.js, TypeScript, Tailwind CSS, PHP e MySQL para desenvolver aplicações de alto desempenho.
+Meu foco principal é criar interfaces intuitivas e impactantes, aplicando princípios de UI/UX para maximizar a conversão de usuários. Ao longo da minha jornada, tive a oportunidade de trabalhar em projetos variados, desde o desenvolvimento de sistemas internos até a criação de landing pages otimizadas para SEO.
+Como entusiasta de novas tecnologias, busco constantemente me atualizar e compartilhar conhecimentos com a comunidade de desenvolvedores.
                     </p>
                     <div className="mt-6 flex justify-center lg:justify-start gap-6">
                         <SocialLink href="#" icon={InstagramIcon} />
