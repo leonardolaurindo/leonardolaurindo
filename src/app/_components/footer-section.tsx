@@ -4,19 +4,17 @@ import { Meteors } from "@/components/meteors";
 
 export default function FooterSection() {
     return (
-        <footer className="w-full  relative">
+        <footer className="w-full relative">
             <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-violet-500 to-violet-950 transform scale-[0.80] bg-purple-500 rounded-full blur-3xl" />
-            <div className="relative shadow-xl bg-background border px-4 py-8 h-full overflow-hidden flex flex-col justify-end items-start">
-                <div className="mx-auto pb-2">
-
-
-                    <p className="mx-auto mt-2 max-w-md text-center leading-relaxed text-gray-500">
+            <div className="relative shadow-xl bg-background border px-4 py-8 h-full overflow-hidden flex flex-col">
+                <div className="flex-col w-full mx-auto pb-2 items-center justify-center">
+                    <p className="mx-auto mt-2 max-w-md text-center leading-relaxed text-zinc-500 dark:text-zinc-300">
                         Leonardo Laurindo - Desenvolvedor Full Stack
                     </p>
 
                     <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
                         <li>
-                            <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> About </a>
+                            <a className="text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300" href="#"> About </a>
                         </li>
                     </ul>
 
@@ -26,7 +24,7 @@ export default function FooterSection() {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
                             >
                                 <span className="sr-only">Facebook</span>
                                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -44,7 +42,7 @@ export default function FooterSection() {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
                             >
                                 <span className="sr-only">Instagram</span>
                                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -62,7 +60,7 @@ export default function FooterSection() {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
                             >
                                 <span className="sr-only">Twitter</span>
                                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -78,7 +76,7 @@ export default function FooterSection() {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
                             >
                                 <span className="sr-only">GitHub</span>
                                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -96,7 +94,7 @@ export default function FooterSection() {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
                             >
                                 <span className="sr-only">Dribbble</span>
                                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
