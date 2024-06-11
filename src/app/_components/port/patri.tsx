@@ -16,7 +16,16 @@ import Image from "next/image"
 
 export const PatriItem = () => {
     return (
-        <>
+        <div className="relative isolate">
+            <defs>
+                <pattern id="1d4240dd-898f-445f-932d-e2872fd12de3" width="200" height="200" x="50%" y="0" patternUnits="userSpaceOnUse">
+                    <path d="M.5 200V.5H200" fill="none"></path>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" strokeWidth="0" fill="url(#1d4240dd-898f-445f-932d-e2872fd12de3)"></rect>
+            <div className="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+                <div className="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-violet-950 to-violet-500 opacity-10 dark:opacity-20" ></div>
+            </div>
             <div className="pt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12 lg:grid-rows-[auto-1f]">
                 <div className="lg:pl-20 flex justify-center">
                     <div className="max-w-xs lg:max-w-none">
@@ -53,31 +62,31 @@ export const PatriItem = () => {
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
-                                        <circle cx="2.5" cy="2.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="2.5" cy="24.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="2.5" cy="46.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="2.5" cy="68.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="2.5" cy="90.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="24.5" cy="2.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="24.5" cy="24.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="24.5" cy="46.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="24.5" cy="68.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="24.5" cy="90.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="46.5" cy="2.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="46.5" cy="24.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="46.5" cy="46.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="46.5" cy="68.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="46.5" cy="90.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="68.5" cy="2.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="68.5" cy="24.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="68.5" cy="46.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="68.5" cy="68.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="68.5" cy="90.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="90.5" cy="2.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="90.5" cy="24.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="90.5" cy="46.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="90.5" cy="68.5" r="2.5" fill="currentColor" className="text-primary" />
-                                        <circle cx="90.5" cy="90.5" r="2.5" fill="currentColor" className="text-primary" />
+                                        <circle cx="2.5" cy="2.5" r="2.5" fill="currentColor" />
+                                        <circle cx="2.5" cy="24.5" r="2.5" fill="currentColor" />
+                                        <circle cx="2.5" cy="46.5" r="2.5" fill="currentColor" />
+                                        <circle cx="2.5" cy="68.5" r="2.5" fill="currentColor" />
+                                        <circle cx="2.5" cy="90.5" r="2.5" fill="currentColor" />
+                                        <circle cx="24.5" cy="2.5" r="2.5" fill="currentColor" />
+                                        <circle cx="24.5" cy="24.5" r="2.5" fill="currentColor" />
+                                        <circle cx="24.5" cy="46.5" r="2.5" fill="currentColor" />
+                                        <circle cx="24.5" cy="68.5" r="2.5" fill="currentColor" />
+                                        <circle cx="24.5" cy="90.5" r="2.5" fill="currentColor" />
+                                        <circle cx="46.5" cy="2.5" r="2.5" fill="currentColor" />
+                                        <circle cx="46.5" cy="24.5" r="2.5" fill="currentColor" />
+                                        <circle cx="46.5" cy="46.5" r="2.5" fill="currentColor" />
+                                        <circle cx="46.5" cy="68.5" r="2.5" fill="currentColor" />
+                                        <circle cx="46.5" cy="90.5" r="2.5" fill="currentColor" />
+                                        <circle cx="68.5" cy="2.5" r="2.5" fill="currentColor" />
+                                        <circle cx="68.5" cy="24.5" r="2.5" fill="currentColor" />
+                                        <circle cx="68.5" cy="46.5" r="2.5" fill="currentColor" />
+                                        <circle cx="68.5" cy="68.5" r="2.5" fill="currentColor" />
+                                        <circle cx="68.5" cy="90.5" r="2.5" fill="currentColor" />
+                                        <circle cx="90.5" cy="2.5" r="2.5" fill="currentColor" />
+                                        <circle cx="90.5" cy="24.5" r="2.5" fill="currentColor" />
+                                        <circle cx="90.5" cy="46.5" r="2.5" fill="currentColor" />
+                                        <circle cx="90.5" cy="68.5" r="2.5" fill="currentColor" />
+                                        <circle cx="90.5" cy="90.5" r="2.5" fill="currentColor" />
                                     </svg>
                                 </span>
                             </div>
@@ -130,7 +139,7 @@ export const PatriItem = () => {
                     </div>
                 </div>
             </div>
-            <div className="clients pt-5 pb-10">
+            <div className="pt-5 pb-10">
                 <h6 className="mb-4 flex items-center text-md font-normal text-zinc-600 dark:text-zinc-400">
                     Tecnologias utilizadas
                     <span className="ml-3 inline-block h-px w-10 bg-zinc-600"></span>
@@ -151,6 +160,6 @@ export const PatriItem = () => {
                     </svg>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
