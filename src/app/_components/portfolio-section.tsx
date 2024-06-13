@@ -18,10 +18,10 @@ import { ImageDialog } from "@/components/image-dialog";
 import { PatriItem } from "./port/patri";
 import { InterSuiteItem } from "./port/intersuite";
 
-export const PortfolioSection = () => {
+export default function PortfolioSection() {
     return (
         <section
-            id='about'
+            id='port'
             className="container flex flex-col md:max-w-[64rem] md:py-12 lg:py-24 relative"
         >
             <div className="relative z-10">
@@ -36,9 +36,6 @@ export const PortfolioSection = () => {
                 <div>
                     <PatriItem />
 
-                    <div className="inline-flex items-center justify-center w-full">
-                        <hr className="w-full h-px my-8 bg-zinc-300 border-0 dark:bg-zinc-600" />
-                    </div>
 
                     <InterSuiteItem />
                 </div>
@@ -49,5 +46,5 @@ export const PortfolioSection = () => {
 };
 
 
-export default PortfolioSection;
+PortfolioSection;
 
