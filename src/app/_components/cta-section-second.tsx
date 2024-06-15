@@ -1,4 +1,4 @@
-export default function CtaSection() {
+export default function CtaSectionSecond() {
     return (
         <section className="py-8">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-4 pb-8">
@@ -9,10 +9,10 @@ export default function CtaSection() {
                         <h2
                             className="font-manrope text-4xl text-slate-50 font-semibold mb-5 lg:mb-2"
                         >
-                            Vamos construir algo incrível juntos?
+                            Transforme sua visão em realidade digital
                         </h2>
                         <p className="text-lg text-slate-50/75">
-                            Fale comigo diretamente no WhatsApp para discutir seu projeto e encontrar a melhor solução.
+                            Vamos colaborar para criar uma solução web personalizada que impulsione seu negócio. Entre em contato agora mesmo!
                         </p>
                     </div>
                     <a href="https://api.whatsapp.com/send/?phone=5588981907153&text=Ol%C3%A1+Leo%2C+eu+vim+pelo+seu+site%21"

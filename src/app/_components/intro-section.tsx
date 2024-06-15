@@ -32,10 +32,11 @@ export function IntroSection() {
                         <p className='max-w-[42] leading-normal text-muted-foreground sm:text-xl sm:leading-8'>
                             Crio soluções web de alto desempenho, escaláveis e centradas no usuário que impulsionam o sucesso do seu negócio. Com expertise em desenvolvimento Full Stack e uma abordagem personalizada, transformo sua presença online com resultados excepcionais.
                         </p>
-                        <div className='space-x-4'>
+                        <div className='md:flex grid grid-col-2 gap-4'>
                             {/* TODO: Lembrar do HREF */}
-                            <a href='#agendar' className='bg-primary py-2 px-4 text-md text-white rounded shado-lg font-bold'>Agende uma Consulta Gratuita</a>
-                            <a href='#port' className='bg-white py-2 px-4 text-md text-primary rounded shado-lg font-bold'>Veja Meu Portfólio</a>
+                            <a href="https://api.whatsapp.com/send/?phone=5588981907153&text=Ol%C3%A1+Leo%2C+eu+vim+pelo+seu+site%21"
+                                target="_blank" className='bg-primary py-2 px-4 text-md text-white rounded shado-lg font-bold'>Me chama no WhatsApp</a>
+                            <a href='#port' className='bg-white py-2 px-4 text-md text-primary rounded shado-lg font-bold scroll-smooth'>Veja Meu Portfólio</a>
                         </div>
                     </div>
                 </section>

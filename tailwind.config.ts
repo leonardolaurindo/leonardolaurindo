@@ -103,6 +103,9 @@ const config = {
         "meteor-effect": "meteor 5s linear infinite",
         fade: 'fadeIn .5s ease-in-out',
       },
+      transitionProperty: {
+        'scroll': 'scroll-behavior',
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography"), addVariablesForColors],

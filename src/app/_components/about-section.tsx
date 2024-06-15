@@ -40,17 +40,17 @@ export default function AboutSection() {
                         <h1 className="flex font-heading text-4xl lg:text-5xl">Oi, sou Leonardo!</h1>
                     </div>
                     <p className="mt-5 text-base text-muted-foreground ">
-                    Desenvolvedor Full Stack apaixonado por criar experiências web envolventes. Com um histórico diversificado em projetos desafiadores, utilizo tecnologias modernas como Next.js, Node.js, TypeScript, Tailwind CSS, PHP e MySQL para desenvolver aplicações de alto desempenho.
-Meu foco principal é criar interfaces intuitivas e impactantes, aplicando princípios de UI/UX para maximizar a conversão de usuários. Ao longo da minha jornada, tive a oportunidade de trabalhar em projetos variados, desde o desenvolvimento de sistemas internos até a criação de landing pages otimizadas para SEO.
-Como entusiasta de novas tecnologias, busco constantemente me atualizar e compartilhar conhecimentos com a comunidade de desenvolvedores.
+                        Desenvolvedor Full Stack apaixonado por criar experiências web envolventes. Com um histórico diversificado em projetos desafiadores, utilizo tecnologias modernas como Next.js, Node.js, TypeScript, Tailwind CSS, PHP e MySQL para desenvolver aplicações de alto desempenho.
+                        Meu foco principal é criar interfaces intuitivas e impactantes, aplicando princípios de UI/UX para maximizar a conversão de usuários. Ao longo da minha jornada, tive a oportunidade de trabalhar em projetos variados, desde o desenvolvimento de sistemas internos até a criação de landing pages otimizadas para SEO.
+                        Como entusiasta de novas tecnologias, busco constantemente me atualizar e compartilhar conhecimentos com a comunidade de desenvolvedores.
                     </p>
-                    <div className="mt-6 flex justify-center lg:justify-start gap-6">
+                    {/* <div className="mt-6 flex justify-center lg:justify-start gap-6">
                         <SocialLink href="#" icon={InstagramIcon} />
                         <SocialLink href="#" icon={GitHubIcon} />
                         <SocialLink href="#" icon={LinkedInIcon} />
                         <SocialLink href="#" icon={TwitterIcon} />
                         <SocialLink href="#" icon={YoutTubeIcon} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
