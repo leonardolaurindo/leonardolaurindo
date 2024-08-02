@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Appointment {
+  id        String    @id @default(uuid())
+  date      DateTime
+  notes     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  userId    String
+  clientId  String
+  Client    Client    @relation(fields: [clientId], references: [id])
+  User      User      @relation(fields: [userId], references: [id])
+
+  @@index([clientId], map: "Appointment_clientId_fkey")
+  @@index([userId], map: "Appointment_userId_fkey")
+}
+
+model Blog {
+  id        String    @id @default(uuid())
+  title     String
+  content   String    @db.Text
+  status    String    @default("DRAFT")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  userId    String
+  User      User      @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "Blog_userId_fkey")
+}
+
+model Client {
+  id          String        @id @default(uuid())
+  name        String
+  email       String        @unique
+  phone       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime?     @updatedAt
+  userId      String
+  Appointment Appointment[]
+  User        User          @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "Client_userId_fkey")
+}
+
+model User {
+  id                String        @id @default(uuid())
+  name              String
+  email             String        @unique
+  password          String
+  role              Role          @default(USER)
+  resetToken        String?
+  resetTokenExpires DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime?     @updatedAt
+  Appointment       Appointment[]
+  Blog              Blog[]
+  Client            Client[]
+  Payment           Payment[]
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+model Payment {
+  id        String    @id @default(uuid())
+  amount    Float
+  status    String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+}
