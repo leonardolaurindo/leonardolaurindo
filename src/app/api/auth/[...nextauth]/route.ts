@@ -69,10 +69,12 @@ export const authOptions: AuthOptions = {
     session: {
         strategy: "jwt",
     },
-    // Adicione uma chave secreta
     secret: process.env.NEXTAUTH_SECRET,
 }
 
 const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST }
+
+// Adicione esta linha no final do arquivo
+export const runtime = "edge"
