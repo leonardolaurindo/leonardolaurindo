@@ -9,21 +9,22 @@ import CtaSection from './_components/cta-section';
 
 const options = {
   method: 'GET',
-  headers: { cookie: 'PHPSESSID=28agbr1ba76vidallt3pf6cshl', 'User-Agent': 'insomnia/9.3.3' }
 };
 
 export default function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('https://intersuite.com.br/api/Certificates/getChatScript', options)
+    fetch('https://www.intersuite.com.br/api/Certificates/getChatScript', options)
       .then(response => response.json())
       .then(response => {
+        console.log('Response received:', response); // Log the response
         if (response.status === 'success') {
           setData(response.data);
+          console.log('Data set:', response.data); // Log the data being set
         }
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error('Fetch error:', err));
   }, []);
 
   return (
