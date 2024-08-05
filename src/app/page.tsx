@@ -27,12 +27,6 @@ export default function Home() {
       document.body.appendChild(scriptElement);
 
       console.log('Script added to the DOM');
-
-      // Cleanup function to remove the script when the component unmounts or script changes
-      return () => {
-        document.body.removeChild(scriptElement);
-        console.log('Script removed from the DOM');
-      };
     }
   }, [script]);
 
