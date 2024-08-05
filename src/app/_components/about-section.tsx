@@ -19,28 +19,7 @@ function SocialLink({ icon: Icon, ...props }: any) {
 
 export default function AboutSection() {
 
-    
-const [script, setScript] = useState<string | null>(null);
 
-useEffect(() => {
-  fetch('/api/getChatScript')
-    .then(response => response.text())
-    .then(data => {
-      setScript(data);
-    })
-    .catch(err => console.error('Fetch error:', err));
-}, []);
-
-useEffect(() => {
-  if (script) {
-    const scriptElement = document.createElement('script');
-    scriptElement.type = 'text/javascript';
-    scriptElement.innerHTML = script;
-    document.body.appendChild(scriptElement);
-
-    console.log('Script added to the DOM');
-  }
-}, [script]);
     return (
 
         <section id='about' className="container flex flex-col md:max-w-[64rem] md:py-12 lg:py-24">
@@ -77,13 +56,6 @@ useEffect(() => {
                     </div> */}
                 </div>
             </div>
-            <div>
-        {script ? (
-          <p>Script loaded and executed.</p>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
         </section>
     )
 }
