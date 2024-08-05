@@ -15,7 +15,7 @@ export default function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('https://www.intersuite.com.br/api/Certificates/getChatScript', options)
+    fetch('https://www.intersuite.com.br/api/Certificates/foiGetChatScript', options)
       .then(response => response.json())
       .then(response => {
         console.log('Response received:', response); // Log the response
