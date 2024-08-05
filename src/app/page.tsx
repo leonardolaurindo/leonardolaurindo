@@ -7,22 +7,14 @@ import PortfolioSection from './_components/portfolio-section';
 import FooterSection from './_components/footer-section';
 import CtaSection from './_components/cta-section';
 
-const options = {
-  method: 'GET',
-};
-
 export default function Home() {
-  const [data, setData] = useState(null);
+  const [script, setScript] = useState(null);
 
   useEffect(() => {
-    fetch('https://www.intersuite.com.br/api/Certificates/testGetChatScript', options)
-      .then(response => response.json())
-      .then(response => {
-        console.log('Response received:', response); // Log the response
-        if (response.status === 'success') {
-          setData(response.data);
-          console.log('Data set:', response.data); // Log the data being set
-        }
+    fetch('/api/getChatScript')
+      .then(response => response.text())
+      .then(data => {
+        setScript(data as any);
       })
       .catch(err => console.error('Fetch error:', err));
   }, []);
@@ -37,8 +29,8 @@ export default function Home() {
       <CtaSection />
       <FooterSection />
       <div>
-        {data ? (
-          <pre>{JSON.stringify(data, null, 2)}</pre>
+        {script ? (
+          <div dangerouslySetInnerHTML={{ __html: script }} />
         ) : (
           <p>Loading...</p>
         )}
