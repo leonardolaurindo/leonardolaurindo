@@ -30,7 +30,7 @@ export default function Home() {
       <FooterSection />
       <div>
         {script ? (
-          <div dangerouslySetInnerHTML={{ __html: script }} />
+          <script> ${script} </script>
         ) : (
           <p>Loading...</p>
         )}
