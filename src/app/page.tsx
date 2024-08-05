@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from 'react';
 import { IntroSection } from './_components/intro-section';
 import AboutSection from './_components/about-section';
@@ -15,7 +16,7 @@ export default function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost/interhub/api/Certificates/getChatScript', options)
+    fetch('https://intersuite.com.br/api/Certificates/getChatScript', options)
       .then(response => response.json())
       .then(response => {
         if (response.status === 'success') {
