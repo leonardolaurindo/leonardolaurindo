@@ -4,7 +4,6 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     const script = `
-    <script>
       (function(i,s,g,r,j,y,b,p,t,z,a){
         a=s.createElement(r),
         a.async=1,
@@ -17,7 +16,6 @@ export async function GET() {
         "facebook_appid":"",
         "permitir_login_anonimo":"on"
       }');
-    </script>
   `;
 
     return new NextResponse(script, {
