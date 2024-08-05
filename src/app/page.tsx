@@ -18,17 +18,16 @@ export default function Home() {
       })
       .catch(err => console.error('Fetch error:', err));
   }, []);
+
   useEffect(() => {
     if (script) {
       const scriptElement = document.createElement('script');
+      scriptElement.type = 'text/javascript';
       scriptElement.innerHTML = script;
-  
-      // Adiciona o script após um pequeno atraso para garantir que o DOM esteja pronto
-      setTimeout(() => {
-        document.body.appendChild(scriptElement);
-        console.log('Script added to the DOM');
-      }, 100);
-  
+      document.body.appendChild(scriptElement);
+
+      console.log('Script added to the DOM');
+
       // Cleanup function to remove the script when the component unmounts or script changes
       return () => {
         document.body.removeChild(scriptElement);
