@@ -17,7 +17,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { Project } from '@/config/portfolio'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLinkIcon } from '@radix-ui/react-icons'
 
 interface ProjectCardProps {
   project: Project
@@ -142,7 +142,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 className="inline-flex items-center gap-2"
               >
                 Ver Demo
-                <ExternalLink className="h-4 w-4" />
+                <ExternalLinkIcon className="h-4 w-4" />
               </a>
             </Button>
           )}
@@ -155,7 +155,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               className="inline-flex items-center gap-2"
             >
               Falar sobre este projeto
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLinkIcon className="h-4 w-4" />
             </a>
           </Button>
         </div>
