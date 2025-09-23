@@ -7,7 +7,7 @@ import {
   TwitterIcon,
   YoutTubeIcon,
 } from '@/components/social-icons'
-import { useEffect, useState } from 'react'
+import { aboutContent } from '@/config/content'
 
 function SocialLink({ icon: Icon, ...props }: any) {
   return (
@@ -27,10 +27,10 @@ export default function AboutSection() {
         <div className="lg:pl-20 flex justify-center">
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
-              src="/avatar.webp"
-              alt="Leonardo Laurindo"
-              width={400}
-              height={400}
+              src={aboutContent.avatar.src}
+              alt={aboutContent.avatar.alt}
+              width={aboutContent.avatar.width}
+              height={aboutContent.avatar.height}
               quality={100}
               priority={true}
               className="animate-fadeaspect-square rotate-3 rounded-lg dark:bg-zinc-800 bg-zinc-100 object-cover mt-8"
@@ -40,30 +40,19 @@ export default function AboutSection() {
         <div className="lg:order-first lg:row-span-2 text-justify">
           <div className="flex flex-row">
             <Image
-              src="/waving-hand.gif"
-              alt="Hello"
+              src={aboutContent.greeting.icon}
+              alt={aboutContent.greeting.iconAlt}
               width={40}
               height={40}
               className="m-2 w-15 h-15 sm:w-10 sm:h-10 item"
               unoptimized
             />
             <h1 className="flex font-heading text-4xl lg:text-5xl">
-              Oi, sou Leonardo!
+              {aboutContent.greeting.text}
             </h1>
           </div>
           <p className="mt-5 text-base text-muted-foreground ">
-            Desenvolvedor Full Stack apaixonado por criar experiências web
-            envolventes. Com um histórico diversificado em projetos
-            desafiadores, utilizo tecnologias modernas como Next.js, Node.js,
-            TypeScript, Tailwind CSS, PHP e MySQL para desenvolver aplicações de
-            alto desempenho. Meu foco principal é criar interfaces intuitivas e
-            impactantes, aplicando princípios de UI/UX para maximizar a
-            conversão de usuários. Ao longo da minha jornada, tive a
-            oportunidade de trabalhar em projetos variados, desde o
-            desenvolvimento de sistemas internos até a criação de landing pages
-            otimizadas para SEO. Como entusiasta de novas tecnologias, busco
-            constantemente me atualizar e compartilhar conhecimentos com a
-            comunidade de desenvolvedores.
+            {aboutContent.description}
           </p>
           {/* <div className="mt-6 flex justify-center lg:justify-start gap-6">
                         <SocialLink href="#" icon={InstagramIcon} />

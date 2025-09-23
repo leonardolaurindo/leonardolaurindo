@@ -6,6 +6,13 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { ModeToggle } from './_components/mode-toggle'
 
 import { ThemeProvider } from './_components/theme-provider'
+import { generateSiteMetadata } from '@/config/metadata/site'
+import {
+  personSchema,
+  websiteSchema,
+  professionalServiceSchema,
+  organizationSchema,
+} from '@/config/metadata/schemas'
 
 import './globals.css'
 
@@ -19,61 +26,7 @@ const fontHeading = localFont({
   variable: '--font-heading',
 })
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://leonardolaurindo.com.br'),
-  title:
-    'Leonardo Laurindo | Desenvolvedor Full Stack | Soluções Web de Alta Performance',
-  description:
-    'Desenvolvedor Full Stack especializado em criar soluções web de alta performance usando JavaScript, React, Next.js, Node.js e PHP. Transforme suas ideias em realidade com um desenvolvedor experiente e confiável.',
-  keywords: [
-    'desenvolvedor full stack',
-    'soluções web de alta performance',
-    'JavaScript',
-    'React',
-    'Next.js',
-    'Node.js',
-    'PHP',
-    'desenvolvimento web',
-    'criação de sites',
-    'desenvolvimento de aplicativos web',
-    'Leonardo Laurindo',
-  ],
-  authors: [
-    { name: 'Leonardo Laurindo', url: 'https://leonardolaurindo.com.br' },
-  ],
-  creator: 'Leonardo Laurindo',
-  publisher: 'Leonardo Laurindo',
-  icons: {
-    icon: '/favicon.png',
-  },
-  openGraph: {
-    title:
-      'Leonardo Laurindo | Desenvolvedor Full Stack | Soluções Web de Alta Performance',
-    description:
-      'Desenvolvedor Full Stack especializado em criar soluções web de alta performance usando JavaScript, React, Next.js, Node.js e PHP. Transforme suas ideias em realidade com um desenvolvedor experiente e confiável.',
-    url: 'https://leonardolaurindo.com.br',
-    siteName: 'Leonardo Laurindo - Desenvolvedor Full Stack',
-    images: [
-      {
-        url: '/og-image.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Leonardo Laurindo - Desenvolvedor Full Stack',
-      },
-    ],
-    locale: 'pt-BR',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-    },
-  },
-}
+export const metadata: Metadata = generateSiteMetadata()
 
 export const viewport = {
   themeColor: [
@@ -87,8 +40,26 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const schemas = [
+    personSchema,
+    websiteSchema,
+    professionalServiceSchema,
+    organizationSchema,
+  ]
+
   return (
     <html lang="pt-br" suppressHydrationWarning>
+      <head>
+        {schemas.map((schema, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema),
+            }}
+          />
+        ))}
+      </head>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
