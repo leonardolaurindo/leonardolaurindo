@@ -5,13 +5,6 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -31,6 +24,8 @@ import {
   PersonIcon,
   ArrowLeftIcon,
   ClockIcon,
+  CodeIcon,
+  GearIcon,
 } from '@radix-ui/react-icons'
 import { useRouter } from 'next/navigation'
 
@@ -82,10 +77,7 @@ export function ProjectDetail({
             className="text-center space-y-6"
           >
             <div className="flex items-center justify-center gap-4 flex-wrap">
-              <Badge
-                variant="secondary"
-                className="text-sm bg-white text-black border-gray-200 dark:bg-black dark:text-white dark:border-gray-800 font-medium shadow-sm"
-              >
+              <Badge className="bg-black dark:bg-white text-white dark:text-black border-0 shadow-lg hover:shadow-xl hover:scale-105 font-bold text-sm px-4 py-1.5">
                 {project.metadata.category}
               </Badge>
               <div className="flex items-center gap-2 text-muted-foreground">
@@ -180,14 +172,37 @@ export function ProjectDetail({
                   transition={{ duration: 0.4, delay: 0.4 + techIndex * 0.1 }}
                 >
                   <Badge
-                    variant="outline"
-                    className="text-sm px-4 py-2 bg-white/80 text-gray-800 border-gray-200 hover:bg-white dark:bg-gray-900/80 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-900 transition-all duration-200 font-medium shadow-sm"
-                    style={{
-                      borderColor: tech.color ? `${tech.color}40` : undefined,
-                      color: tech.color || undefined,
-                    }}
+                    variant={tech.color ? 'techColored' : 'tech'}
+                    className={
+                      tech.color
+                        ? `
+                      relative overflow-hidden shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 font-medium text-sm px-3 py-1
+                      before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent
+                      before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700
+                      ${
+                        tech.color
+                          ? `bg-[${tech.color}15] border-[${tech.color}30] text-[${tech.color}] hover:bg-[${tech.color}25]`
+                          : ''
+                      }
+                      dark:bg-gray-800/50 dark:border-gray-700 dark:text-gray-200
+                    `
+                        : ''
+                    }
+                    style={
+                      tech.color
+                        ? {
+                            background: `linear-gradient(135deg, ${tech.color}15 0%, ${tech.color}08 100%)`,
+                            borderColor: `${tech.color}30`,
+                            color: tech.color,
+                            boxShadow: `0 0 20px ${tech.color}20`,
+                          }
+                        : undefined
+                    }
                   >
-                    {tech.name}
+                    <span className="relative z-10 flex items-center gap-1.5">
+                      <CodeIcon className="h-3 w-3 opacity-70" />
+                      {tech.name}
+                    </span>
                   </Badge>
                 </motion.div>
               ))}
