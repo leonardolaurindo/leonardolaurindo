@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Inter as FontSants } from 'next/font/google'
 import { cn } from '@/lib/utils'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { ModeToggle } from './_components/mode-toggle'
 
 import { ThemeProvider } from './_components/theme-provider'
@@ -50,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
+        {/* JSON-LD Schemas para SEO */}
         {schemas.map((schema, index) => (
           <script
             key={index}
@@ -67,6 +68,16 @@ export default function RootLayout({
           fontHeading.variable,
         )}
       >
+        {/* Google Tag Manager (noscript) - Fallback no início do body */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TDLDGMLG"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -77,7 +88,12 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="GTM-TDLDGMLG" />
+
+      {/* Google Tag Manager - Carregado após o HTML */}
+      <GoogleTagManager gtmId="GTM-TDLDGMLG" />
+
+      {/* Google Analytics - Tracking adicional */}
+      <GoogleAnalytics gaId="G-FZRWC8LM21" />
     </html>
   )
 }
