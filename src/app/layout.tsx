@@ -8,11 +8,12 @@ import { ModeToggle } from './_components/mode-toggle'
 import { ThemeProvider } from './_components/theme-provider'
 import { generateSiteMetadata } from '@/config/metadata/site'
 import {
-  personSchema,
-  websiteSchema,
-  professionalServiceSchema,
-  organizationSchema,
-} from '@/config/metadata/schemas'
+  localBusinessSchema,
+  personSchemaWithEEAT,
+  professionalServiceSchemaV2,
+  websiteSchemaV2,
+  contactPointSchema,
+} from '@/config/metadata/advanced-schemas'
 
 import './globals.css'
 
@@ -40,17 +41,28 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  /**
+   * 🎯 Schemas estruturados para SEO - Google 2025
+   *
+   * Cada schema tem um propósito específico:
+   * 1. localBusinessSchema - Local Pack na SERP
+   * 2. personSchemaWithEEAT - E-E-A-T (Expertise, Experience, Authority, Trust)
+   * 3. professionalServiceSchemaV2 - Catálogo de serviços
+   * 4. websiteSchemaV2 - Sitelinks search box
+   * 5. contactPointSchema - Múltiplos pontos de contato
+   */
   const schemas = [
-    personSchema,
-    websiteSchema,
-    professionalServiceSchema,
-    organizationSchema,
+    localBusinessSchema,
+    personSchemaWithEEAT,
+    professionalServiceSchemaV2,
+    websiteSchemaV2,
+    contactPointSchema,
   ]
 
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        {/* JSON-LD Schemas para SEO */}
+        {/* 🔹 JSON-LD Schemas para SEO estruturado */}
         {schemas.map((schema, index) => (
           <script
             key={index}
@@ -60,6 +72,16 @@ export default function RootLayout({
             }}
           />
         ))}
+
+        {/* 🔹 Preconnect para melhoria de performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body
         className={cn(
@@ -68,7 +90,7 @@ export default function RootLayout({
           fontHeading.variable,
         )}
       >
-        {/* Google Tag Manager (noscript) - Fallback no início do body */}
+        {/* 🔹 Google Tag Manager (noscript) - Fallback no início do body */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TDLDGMLG"
@@ -89,10 +111,10 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
 
-      {/* Google Tag Manager - Carregado após o HTML */}
+      {/* 🔹 Google Tag Manager - Carregado após o HTML para não bloquear rendering */}
       <GoogleTagManager gtmId="GTM-TDLDGMLG" />
 
-      {/* Google Analytics - Tracking adicional */}
+      {/* 🔹 Google Analytics - Tracking adicional */}
       <GoogleAnalytics gaId="G-FZRWC8LM21" />
     </html>
   )
