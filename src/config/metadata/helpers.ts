@@ -18,6 +18,7 @@ export const generatePageMetadata = (
   options?: {
     keywords?: string[]
     ogImage?: string
+    canonical?: string
     robots?: {
       index?: boolean
       follow?: boolean
@@ -34,6 +35,11 @@ export const generatePageMetadata = (
     description,
     keywords: finalKeywords,
 
+    // 🔗 URL canônica clara
+    alternates: {
+      canonical: options?.canonical,
+    },
+
     robots: {
       index: options?.robots?.index ?? true,
       follow: options?.robots?.follow ?? true,
@@ -43,7 +49,7 @@ export const generatePageMetadata = (
     openGraph: {
       type: 'website',
       locale: 'pt_BR',
-      url: siteConfig.url,
+      url: options?.canonical || siteConfig.url,
       title,
       description,
       images: [
@@ -118,6 +124,7 @@ export const generateArticleMetadata = (
 export const generateProjectMetadata = (
   projectTitle: string,
   projectDescription: string,
+  projectId: string,
   options: {
     image: string
     year: string
@@ -132,9 +139,12 @@ export const generateProjectMetadata = (
     ...(options.technologies || []),
   ]
 
+  const canonicalUrl = `${siteConfig.url}/portfolio/${projectId}`
+
   return generatePageMetadata(`${projectTitle} | Projeto`, projectDescription, {
     keywords: projectKeywords,
     ogImage: options.image,
+    canonical: canonicalUrl,
     robots: {
       index: true,
       follow: true,

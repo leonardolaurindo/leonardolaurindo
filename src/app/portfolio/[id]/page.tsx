@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { projects } from '@/config/portfolio'
 import { ProjectDetail } from '@/components/project-detail'
+import { generateProjectMetadata } from '@/config/metadata/helpers'
 
 interface PageProps {
   params: Promise<{
@@ -24,15 +25,25 @@ export async function generateMetadata({ params }: PageProps) {
     }
   }
 
-  return {
-    title: `${project.title} - ${project.subtitle}`,
-    description: project.description,
-    openGraph: {
-      title: `${project.title} - ${project.subtitle}`,
-      description: project.description,
-      images: [project.images[0].src],
+  return generateProjectMetadata(
+    project.title,
+    project.description,
+    project.id,
+    {
+      image: project.images[0].src.startsWith('http')
+        ? project.images[0].src
+        : `${process.env.NEXT_PUBLIC_SITE_URL || 'https://leonardolaurindo.com.br'}${project.images[0].src}`,
+      year: project.metadata.year,
+      category: project.metadata.category,
+      technologies: project.technologies.map((t) => t.name),
+      keywords: [
+        project.metadata.category,
+        'projeto desenvolvimento web',
+        'case study',
+        'portfolio desenvolvedor',
+      ],
     },
-  }
+  )
 }
 
 export default async function ProjectPage({ params }: PageProps) {
